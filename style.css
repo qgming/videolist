@@ -13,11 +13,14 @@ body {
 header {
   display: flex;
   flex-flow: row;
+  top: -1px;
+  width: 100%;
   height: 60px;
   background-color: white;
-  box-shadow: 3px 3px 10px 0px rgba(220, 220, 220, 0.75);
+  box-shadow: 3px 3px 5px 0px rgba(220, 220, 220, 0.75);
   color: #ffa500;
-
+  position: fixed;
+  z-index: 999;
 }
 
 header img {
@@ -64,7 +67,7 @@ footer {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #f9f9f9;
   padding: 20px;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 main {
@@ -82,7 +85,7 @@ h2 {
 .search {
   display: flex;
   flex-flow: row;
-  margin-top: 180px;
+  margin-top: 280px;
   margin-bottom: 120px;
   padding: 10px;
   width: 700px;
@@ -153,15 +156,19 @@ h2 {
 #img1 {
   background: url(img/top/top1.png);
 }
+
 #img2 {
   background: url(img/top/top2.png);
 }
+
 #img3 {
   background: url(img/top/top3.png);
 }
+
 #img4 {
   background: url(img/top/top4.png);
 }
+
 #img5 {
   background: url(img/top/top5.png);
 }
@@ -179,17 +186,21 @@ h2 {
   left: 20px;
   font-size: 30px;
   font-weight: bolder;
-  color: rgb(255, 255, 255,0.9);
+  color: rgb(255, 255, 255, 0.9);
 }
+
 #text2 {
-  color: rgb(255, 165, 0,0.9);
+  color: rgb(255, 165, 0, 0.9);
 }
+
 #text3 {
   color: rgba(11, 129, 11, 0.9);
 }
+
 #text4 {
   color: rgba(242, 60, 40, 0.9);
 }
+
 #text5 {
   color: rgba(87, 175, 238, 0.9);
 }
@@ -239,4 +250,39 @@ section {
   bottom: 3px;
   background-color: orange;
   box-shadow: 5px 5px 10px 0px rgba(200, 200, 200, 0.75);
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  h1 {
+    margin-left: 20%;
+  }
+  nav ul {
+    display: none;
+  }
+  .search {
+    width: 380px;
+    margin-top: 200px;
+    margin-bottom: 50px;
+  }
+  #searchButton {
+    font-size: 15px;
+  }
+  .listTop {
+    display: none;
+  }
+ h2 {
+  margin-left: 37%;
+ }
+ .webcard {
+  width: 150px;
+ }
+ .webname {
+  font-size: 20px;
+ }
+ footer {
+  font-size: 12px;
+ }
+
+
 }
