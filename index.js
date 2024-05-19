@@ -2,10 +2,20 @@ let searchText = document.getElementById('searchText')
 let searctButton = document.getElementById('searchButton')
 let searchUrl = "https://soupian.xyz/s?key="
 
-searctButton.onclick = function () {
+searctButton.onclick = search
+
+// 搜索
+function search() {
   if (searchText.value === "") {
-      alert('请输入内容！')
-  } else {
-      window.open(searchUrl + searchText.value)
-  }
+    alert('请输入内容！')
+} else {
+    window.open(searchUrl + searchText.value)
 }
+}
+
+/*监听键盘点击事件*/
+searchText.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+      search()
+  }
+})
