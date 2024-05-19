@@ -261,7 +261,7 @@ section {
     display: none;
   }
   .search {
-    width: 380px;
+    width: 350px;
     margin-top: 200px;
     margin-bottom: 50px;
   }
@@ -275,10 +275,12 @@ section {
   margin-left: 37%;
  }
  .webcard {
-  width: 150px;
+  width: 140px;
+  margin: 5px;
+  padding: 10px;
  }
  .webname {
-  font-size: 20px;
+  font-size: 18px;
  }
  footer {
   font-size: 12px;
