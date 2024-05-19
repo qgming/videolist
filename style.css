@@ -10,6 +10,39 @@ h2 {
   font-size: 30px;
   
 }
+.search {
+    display: flex;
+    flex-flow: row;
+    padding: 10px;
+    width: 700px;
+    height: 40px;
+    opacity: 1;
+    border-radius: 30px;
+    background: white;
+    border: 1px solid rgba(200, 200, 200, 1);
+    backdrop-filter: blur(30px);
+    align-items: center;
+}
+
+#searchText {
+  width: 600px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0);
+  outline: none;
+  font-size: 20px;
+  border: 0px;
+  padding-left: 10px;
+}
+
+#searchButton {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: orange;
+  font-size: 20px;
+  font-weight: 600;
+}
 
 section {
   display: flex;
@@ -23,7 +56,7 @@ section {
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background-color:  #f9f9f9;
+  background-color:  white;
   ;
 }
 
@@ -44,11 +77,11 @@ section {
   margin: 10px;
   padding: 10px;
   border-radius: 12px;
-  box-shadow: 5px 5px 10px 0px rgba(220, 220, 220, 0.75);
+  box-shadow: 3px 3px 10px 0px rgba(220, 220, 220, 0.75);
 }
 .webcard:hover {
   position: relative;
-  bottom: 5px;
-  color: red;
+  bottom: 2px;
+  background-color: orange;
   box-shadow: 5px 5px 10px 0px rgba(200, 200, 200, 0.75);
 }
