@@ -255,7 +255,7 @@ section {
 /* 响应式设计 */
 @media screen and (max-width: 768px) {
   h1 {
-    margin-left: 20%;
+    margin-left: 19%;
   }
   nav ul {
     display: none;
