@@ -1,6 +1,8 @@
 let searchText = document.getElementById('searchText')
 let searctButton = document.getElementById('searchButton')
-let searchUrl = "https://soupian.xyz/s?key="
+let searchUrl = "https://zhuiyingmao5.com/vodsearch/-------------.html?wd="
+// let searchUrl = "https://soupian.xyz/s?key="
+// https://zhuiyingmao5.com/vodsearch/-------------.html?wd=
 
 searctButton.onclick = search
 
