@@ -16,14 +16,22 @@ header {
   height: 60px;
   background-color: white;
   box-shadow: 3px 3px 10px 0px rgba(220, 220, 220, 0.75);
-  color: orange;
+  color: #ffa500;
 
 }
+
+header img {
+  width: 45px;
+  margin-left: 20px;
+}
+
 h1 {
   height: 60px;
   line-height: 60px;
-  margin-left: 20px;
+  margin-left: 5px;
+
 }
+
 nav ul {
   position: absolute;
   right: 20px;
@@ -35,9 +43,10 @@ nav li {
   text-align: center;
   width: 100px;
   height: 60px;
-  line-height: 60px; 
+  line-height: 60px;
   text-decoration: none;
 }
+
 li a {
   text-decoration: none;
   color: black;
