@@ -109,11 +109,18 @@ main {
   h1 {
     margin-left: 19%;
   }
+
   nav ul {
     display: none;
   }
+
   .slogan {
     font-size: 50px;
     margin: 30px;
   }
+
+  footer {
+    font-size: 12px;
+  }
+
 }
