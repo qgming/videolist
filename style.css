@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-  font-family: "阿里妈妈东方大楷 Regular";
 }
 
 body {
@@ -115,6 +114,7 @@ h2 {
   font-size: 20px;
   border: 0px;
   padding-left: 10px;
+ 
 }
 
 #searchButton {
@@ -125,6 +125,7 @@ h2 {
   background-color: orange;
   font-size: 20px;
   font-weight: 500;
+  color: #f9f9f9;
 }
 
 /* 排行榜 */
