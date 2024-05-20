@@ -106,10 +106,6 @@ main {
 
 /* 响应式设计 */
 @media screen and (max-width: 768px) {
-  h1 {
-    margin-left: 19%;
-  }
-
   nav ul {
     display: none;
   }
@@ -120,7 +116,7 @@ main {
   }
 
   footer {
-    font-size: 12px;
+    font-size: 10px;
   }
 
 }

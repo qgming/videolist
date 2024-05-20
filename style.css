@@ -255,9 +255,7 @@ section {
 
 /* 响应式设计 */
 @media screen and (max-width: 768px) {
-  h1 {
-    margin-left: 19%;
-  }
+
   nav ul {
     display: none;
   }
@@ -275,6 +273,9 @@ section {
  h2 {
   margin-left: 37%;
  }
+ section {
+  margin: 10px;
+ }
  .webcard {
   width: 140px;
   margin: 5px;
@@ -284,7 +285,7 @@ section {
   font-size: 18px;
  }
  footer {
-  font-size: 12px;
+  font-size: 10px;
  }
 }
 
