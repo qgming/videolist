@@ -208,13 +208,12 @@ main {
 main {
   display: flex;
   flex-direction: column;
-  margin: 20px;
 }
 
 h2 {
   font-size: 23px;
   font-weight: 160;
-  margin-left: 60px;
+  margin-left: 80px;
 }
 
 section {
