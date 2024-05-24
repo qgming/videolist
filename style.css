@@ -74,11 +74,6 @@ main {
   background-color: #f9f9f9;
 }
 
-h2 {
-  font-size: 25px;
-  font-weight: 160;
-  margin-left: 80px;
-}
 
 /* 搜索框 */
 
@@ -114,7 +109,7 @@ h2 {
   font-size: 20px;
   border: 0px;
   padding-left: 10px;
- 
+
 }
 
 #searchButton {
@@ -210,6 +205,18 @@ h2 {
 
 /* 网站信息 */
 
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+h2 {
+  font-size: 23px;
+  font-weight: 160;
+  margin-left: 60px;
+}
+
 section {
   display: flex;
   flex-wrap: wrap;
@@ -243,7 +250,7 @@ section {
   margin: 10px;
   padding: 10px;
   border-radius: 12px;
-  
+
   box-shadow: 1px 1px 5px 0px rgba(220, 220, 220, 0.8);
 }
 
@@ -251,7 +258,7 @@ section {
   position: relative;
   bottom: 5px;
   background-color: orange;
-  box-shadow: 0px 10px 10px 0px rgba(200, 200, 200, 0.8);
+  box-shadow: 0px 5px 8px 0px rgba(200, 200, 200, 0.8);
 }
 
 /* 响应式设计 */
@@ -260,39 +267,49 @@ section {
   nav ul {
     display: none;
   }
+
   .search {
     width: 350px;
     margin-top: 200px;
     margin-bottom: 50px;
   }
+
   #searchButton {
     font-size: 15px;
   }
+
   .listTop {
     display: none;
   }
- h2 {
-  margin-left: 37%;
- }
- section {
-  margin: 10px;
- }
- .webcard {
-  width: 140px;
-  margin: 5px;
-  padding: 10px;
- }
- .webname {
-  font-size: 18px;
- }
- footer {
-  font-size: 10px;
- }
+
+  h2 {
+    margin-left: 37%;
+  }
+
+  section {
+    margin: 10px;
+  }
+
+  .webcard {
+    width: 140px;
+    margin: 5px;
+    padding: 10px;
+  }
+
+  .webname {
+    font-size: 18px;
+  }
+
+  footer {
+    font-size: 10px;
+  }
 }
 
 /* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 @font-face {
-  font-family: "阿里妈妈东方大楷 Regular";font-weight: 400;src: url("//at.alicdn.com/wf/webfont/HZrBu41iyKqF/wDr5IkDsmKiR.woff2") format("woff2"),
-  url("//at.alicdn.com/wf/webfont/HZrBu41iyKqF/mZZIYvjKVjYV.woff") format("woff");
+  font-family: "阿里妈妈东方大楷 Regular";
+  font-weight: 400;
+  src: url("//at.alicdn.com/wf/webfont/HZrBu41iyKqF/wDr5IkDsmKiR.woff2") format("woff2"),
+    url("//at.alicdn.com/wf/webfont/HZrBu41iyKqF/mZZIYvjKVjYV.woff") format("woff");
   font-display: swap;
 }
