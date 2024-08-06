@@ -1,317 +1,629 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>橘子导航 - 免费影视工具导航</title>
+    <link rel="icon" href="img/logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="google-site-verification"
+      content="T10Zp8Cnm4QGlA3MeG0DYexnNTfc5K3hoDgF0fW3Q8Y"
+    />
+    <!-- 微软 -->
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "mrasl7swac");
+    </script>
+    <!-- 百度 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c584467e88493dd8d50e5e0caacef56b";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>橘子导航 - 免费影视工具导航</title>
-  <link rel="icon" href="img/logo.svg">
-  <link rel="stylesheet" href="style.css">
-  <meta name="google-site-verification" content="T10Zp8Cnm4QGlA3MeG0DYexnNTfc5K3hoDgF0fW3Q8Y" />
-  <!-- 微软 -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "mrasl7swac");
-</script>
-  <!-- 百度 -->
+    <!-- 谷歌 -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8564552304298953"
+      crossorigin="anonymous"
+    ></script>
+    <meta
+      name="description"
+      content="橘子导航,免费影视,在线视频,ai工具箱,歌手2024,庆余年2,视频播放,动漫,番剧,bilibili,腾讯视频,爱奇艺"
+    />
+  </head>
+
+  <body>
+    <header>
+      <img src="img/logo.svg" alt="" />
+      <h1>橘子导航</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://s.videolist.cn/" target="_blank">极点搜索</a>
+          </li>
+          <li><a href="pages/tool.html" target="_blank">AI工具箱</a></li>
+          <li><a href="pages/about.html" target="_blank">关于</a></li>
+          <!-- <li><a href="https://github.com/qgming/videolist" target="_blank">GitHub</a></li> -->
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="search">
+          <input id="searchText" type="text" />
+          <button id="searchButton">搜索</button>
+        </div>
+      </section>
+      <div class="listTop">
+        <a href="https://movie.douban.com/top250" target="_blank">
+          <div class="top" id="img1">
+            <div class="imgBlur">
+              <p class="topText">豆瓣<br />TOP250</p>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.imdb.com/chart/top/" target="_blank">
+          <div class="top" id="img2">
+            <div class="imgBlur">
+              <p class="topText" id="text2">IMDb<br />TOP250</p>
+            </div>
+          </div>
+        </a>
+        <a href="https://movie.douban.com/chart" target="_blank">
+          <div class="top" id="img3">
+            <div class="imgBlur">
+              <p class="topText" id="text3">豆瓣<br />电影排行榜</p>
+            </div>
+          </div>
+        </a>
+        <a href="https://www.maoyan.com/board/4" target="_blank">
+          <div class="top" id="img4">
+            <div class="imgBlur">
+              <p class="topText" id="text4">猫眼<br />TOP100</p>
+            </div>
+          </div>
+        </a>
+        <a
+          href="https://www.bilibili.com/movie/index/#st=2&order=4&area=-1&style_id=-1&release_date=-1&season_status=-1&sort=0&page=1"
+          target="_blank"
+        >
+          <div class="top" id="img5">
+            <div class="imgBlur">
+              <p class="topText" id="text5">哔哩哔哩<br />电影排行榜</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <h2>官方频道</h2>
+      <section>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/tengxun.png"
+            alt="腾讯视频"
+          />
+          <a class="webname" href="https://v.qq.com/" target="_blank"
+            >腾讯视频</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/video/202405/aiqiyi.png" alt="爱奇艺" />
+          <a class="webname" href="https://www.iqiyi.com/" target="_blank"
+            >爱奇艺</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/mangguotv.png"
+            alt="芒果TV"
+          />
+          <a class="webname" href="https://www.mgtv.com/" target="_blank"
+            >芒果TV</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/youku.png"
+            alt="优酷视频"
+          />
+          <a class="webname" href="https://www.youku.com/" target="_blank"
+            >优酷视频</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/bilibili.png"
+            alt="哔哩哔哩"
+          />
+          <a class="webname" href="https://www.bilibili.com/" target="_blank"
+            >哔哩哔哩</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/video/202405/cctv.png" alt="CCTV" />
+          <a class="webname" href="https://tv.cctv.com/" target="_blank"
+            >CCTV</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/video/202405/douyin.png" alt="抖音" />
+          <a class="webname" href="https://www.douyin.com/" target="_blank"
+            >抖音</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/xiaohongshu.png"
+            alt="小红书"
+          />
+          <a class="webname" href="https://www.xiaohongshu.com/" target="_blank"
+            >小红书</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/youtube.png"
+            alt="youtube"
+          />
+          <a class="webname" href="https://www.youtube.com/" target="_blank"
+            >YouTube</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/logo.svg" alt="工具箱" />
+          <a
+            class="webname"
+            href="https://www.videolist.cn/pages/tool.html"
+            target="_blank"
+            >AI工具箱</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/logo.svg" alt="更新日志" />
+          <a
+            class="webname"
+            href="https://www.videolist.cn/pages/about.html"
+            target="_blank"
+            >更新日志</a
+          >
+        </div>
+      </section>
+      <h2>免费频道</h2>
+      <section>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/meiyida.png"
+            alt="美益达影视"
+          />
+          <a
+            class="webname"
+            id="webname"
+            href="https://www.myd02.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >美益达影视</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/video/202405/555ys.png" alt="555电影" />
+          <a
+            class="webname"
+            href="https://5seeu.vip/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >555电影</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/youyun.png"
+            alt="悠云影视"
+          />
+          <a
+            class="webname"
+            href="https://yoyys1.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >悠云影视</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/video/202405/keke.png" alt="可可影视" />
+          <a
+            class="webname"
+            href="https://www.kkys3.com:51111//"
+            target="_blank"
+            rel="noopener noreferrer"
+            >可可影视</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/zhuiyingmao.png"
+            alt="追影猫"
+          />
+          <a
+            class="webname"
+            href="https://zhuiyingmao5.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >追影猫</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/juquanquan.png"
+            alt="剧圈圈"
+          />
+          <a
+            class="webname"
+            href="https://www.jqqzx.cc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >剧圈圈</a
+          >
+        </div>
+        <!-- 分界线 -->
+        <div class="webcard">
+          <img class="weblogo" src="img/video/202405/hdmoli.png" alt="hdmoli" />
+          <a
+            class="webname"
+            href="https://www.hdmoli.pro/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >HDmoli</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/video/202405/zytv.png" alt="追影TV" />
+          <a
+            class="webname"
+            href="http://vip.zhuiying.cyou/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >追影TV</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/damixingqiu.png"
+            alt="大米星球"
+          />
+          <a
+            class="webname"
+            href="https://dmti.club/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >大米星球</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/xinshijue.png"
+            alt="新视觉影视"
+          />
+          <a
+            class="webname"
+            href="https://www.6080yy4.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >新视觉影视</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/video/202405/freeok.png" alt="freeok" />
+          <a
+            class="webname"
+            href="https://www.freeok.pro/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >FreeOK</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/choudandan.png"
+            alt="臭蛋蛋影视"
+          />
+          <a
+            class="webname"
+            href="https://cddys.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >臭蛋蛋影视</a
+          >
+        </div>
+        <!-- 分界线 -->
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/novipnoad.png"
+            alt="NO视频"
+          />
+          <a
+            class="webname"
+            href="https://www.novipnoad.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >NO视频</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/kanpiankuangren.png"
+            alt="看片狂人"
+          />
+          <a
+            class="webname"
+            href="https://kpkuang.one/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >看片狂人</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/video/202405/yjys.png" alt="缘觉影视" />
+          <a
+            class="webname"
+            href="https://www.yjys.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >缘觉影视</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/diduan.png"
+            alt="低端影视"
+          />
+          <a
+            class="webname"
+            href="https://ddys.pro/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >低端影视</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/meijuxingqiu.png"
+            alt="美剧星球"
+          />
+          <a
+            class="webname"
+            href="https://www.kmeiju.cc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >美剧星球</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/ppyingshi.png"
+            alt="PP影视"
+          />
+          <a
+            class="webname"
+            href="https://www.pptv06.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >PP影视</a
+          >
+        </div>
+        <!-- 分界线 -->
+        <div class="webcard">
+          <img class="weblogo" src="img/video/202405/goufan.png" alt="狗番" />
+          <a
+            class="webname"
+            href="https://www.dogsfun.fun/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >狗番</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/mansousou.png"
+            alt="漫搜搜"
+          />
+          <a
+            class="webname"
+            href="https://msousou.vip/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >漫搜搜</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/mitang.png"
+            alt="蜜糖动漫"
+          />
+          <a
+            class="webname"
+            href="https://www.mtacg.tv/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >蜜糖动漫</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/miaowuciyuan.png"
+            alt="喵物次元"
+          />
+          <a
+            class="webname"
+            href="https://www.mwcy.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >喵物次元</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/nicodongman.png"
+            alt="Nico动漫"
+          />
+          <a
+            class="webname"
+            href="https://nicohub.cc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Nico动漫</a
+          >
+        </div>
+        <div class="webcard">
+          <img
+            class="weblogo"
+            src="img/video/202405/hehedongman.png"
+            alt="呵呵动漫"
+          />
+          <a
+            class="webname"
+            href="https://www.hehe.la/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >呵呵动漫</a
+          >
+        </div>
+      </section>
+      <h2>友情链接</h2>
+      <section>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://ai.videolist.cn/" target="_blank"
+            >极点智能体</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+        <div class="webcard">
+          <img class="weblogo" src="img/search.svg" alt="主页" />
+          <a class="webname" href="https://s.videolist.cn/" target="_blank"
+            >极点搜索</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div>Copyright ©️2024 Extreme Dimension All Rights Reserved</div>
+      <div>version 1.0.6</div>
+    </footer>
+  </body>
+  <script src="js/index.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-TE49TDZ90Z"
+  ></script>
   <script>
-    var _hmt = _hmt || [];
-    (function () {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?c584467e88493dd8d50e5e0caacef56b";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-TE49TDZ90Z");
   </script>
-
-  <!-- 谷歌 -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8564552304298953"
-    crossorigin="anonymous"></script>
-  <meta name="description" content="橘子导航,免费影视,在线视频,ai工具箱,歌手2024,庆余年2,视频播放,动漫,番剧,bilibili,腾讯视频,爱奇艺">
-</head>
-
-<body>
-  <header>
-    <img src="img/logo.svg" alt="">
-    <h1>橘子导航</h1>
-    <nav>
-      <ul>
-        <li><a href="https://home.videolist.cn/" target="_blank">极点搜索</a></li>
-        <li><a href="pages/tool.html" target="_blank">AI工具箱</a></li>
-        <li><a href="pages/about.html" target="_blank">关于</a></li>
-        <!-- <li><a href="https://github.com/qgming/videolist" target="_blank">GitHub</a></li> -->
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <div class="search">
-        <input id="searchText" type="text">
-        <button id="searchButton">搜索</button>
-      </div>
-    </section>
-    <div class="listTop">
-      <a href="https://movie.douban.com/top250" target="_blank">
-        <div class="top" id="img1">
-          <div class="imgBlur">
-            <p class="topText">豆瓣<br>TOP250</p>
-          </div>
-        </div>
-      </a>
-      <a href="https://www.imdb.com/chart/top/" target="_blank">
-        <div class="top" id="img2">
-          <div class="imgBlur">
-            <p class="topText" id="text2">IMDb<br>TOP250</p>
-          </div>
-        </div>
-      </a>
-      <a href="https://movie.douban.com/chart" target="_blank">
-        <div class="top" id="img3">
-          <div class="imgBlur">
-            <p class="topText" id="text3">豆瓣<br>电影排行榜</p>
-          </div>
-        </div>
-      </a>
-      <a href="https://www.maoyan.com/board/4" target="_blank">
-        <div class="top" id="img4">
-          <div class="imgBlur">
-            <p class="topText" id="text4">猫眼<br>TOP100</p>
-          </div>
-        </div>
-      </a>
-      <a href="https://www.bilibili.com/movie/index/#st=2&order=4&area=-1&style_id=-1&release_date=-1&season_status=-1&sort=0&page=1"
-        target="_blank">
-        <div class="top" id="img5">
-          <div class="imgBlur">
-            <p class="topText" id="text5">哔哩哔哩<br>电影排行榜</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <h2>官方频道</h2>
-    <section>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/tengxun.png" alt="腾讯视频">
-        <a class="webname" href="https://v.qq.com/" target="_blank">腾讯视频</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/aiqiyi.png" alt="爱奇艺">
-        <a class="webname" href="https://www.iqiyi.com/" target="_blank">爱奇艺</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/mangguotv.png" alt="芒果TV">
-        <a class="webname" href="https://www.mgtv.com/" target="_blank">芒果TV</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/youku.png" alt="优酷视频">
-        <a class="webname" href="https://www.youku.com/" target="_blank">优酷视频</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/bilibili.png" alt="哔哩哔哩">
-        <a class="webname" href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/cctv.png" alt="CCTV">
-        <a class="webname" href="https://tv.cctv.com/" target="_blank">CCTV</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/douyin.png" alt="抖音">
-        <a class="webname" href="https://www.douyin.com/" target="_blank">抖音</a>
-      </div>  
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/xiaohongshu.png" alt="小红书">
-        <a class="webname" href="https://www.xiaohongshu.com/" target="_blank">小红书</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/youtube.png" alt="youtube">
-        <a class="webname" href="https://www.youtube.com/" target="_blank">YouTube</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/search.svg" alt="主页">
-        <a class="webname" href="https://s.videolist.cn/" target="_blank">极点AI搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="工具箱">
-        <a class="webname" href="https://www.videolist.cn/pages/tool.html" target="_blank">AI工具箱</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="更新日志">
-        <a class="webname" href="https://www.videolist.cn/pages/about.html" target="_blank">更新日志</a>
-      </div>
-    </section>
-    <h2>免费频道</h2>
-    <section>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/meiyida.png" alt="美益达影视">
-        <a class="webname" id="webname" href="https://www.myd02.com/" target="_blank"
-          rel="noopener noreferrer">美益达影视</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/555ys.png" alt="555电影">
-        <a class="webname" href="https://5seeu.vip/" target="_blank" rel="noopener noreferrer">555电影</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/youyun.png" alt="悠云影视">
-        <a class="webname" href="https://yoyys1.com/" target="_blank" rel="noopener noreferrer">悠云影视</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/keke.png" alt="可可影视">
-        <a class="webname" href="https://www.kkys3.com:51111//" target="_blank" rel="noopener noreferrer">可可影视</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/zhuiyingmao.png" alt="追影猫">
-        <a class="webname" href="https://zhuiyingmao5.com/" target="_blank" rel="noopener noreferrer">追影猫</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/juquanquan.png" alt="剧圈圈">
-        <a class="webname" href="https://www.jqqzx.cc/" target="_blank" rel="noopener noreferrer">剧圈圈</a>
-      </div>
-      <!-- 分界线 -->
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/hdmoli.png" alt="hdmoli">
-        <a class="webname" href="https://www.hdmoli.pro/" target="_blank" rel="noopener noreferrer">HDmoli</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/zytv.png" alt="追影TV">
-        <a class="webname" href="http://vip.zhuiying.cyou/" target="_blank" rel="noopener noreferrer">追影TV</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/damixingqiu.png" alt="大米星球">
-        <a class="webname" href="https://dmti.club/" target="_blank" rel="noopener noreferrer">大米星球</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/xinshijue.png" alt="新视觉影视">
-        <a class="webname" href="https://www.6080yy4.com/" target="_blank" rel="noopener noreferrer">新视觉影视</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/freeok.png" alt="freeok">
-        <a class="webname" href="https://www.freeok.pro/" target="_blank" rel="noopener noreferrer">FreeOK</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/choudandan.png" alt="臭蛋蛋影视">
-        <a class="webname" href="https://cddys.me/" target="_blank" rel="noopener noreferrer">臭蛋蛋影视</a>
-      </div>
-      <!-- 分界线 -->
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/novipnoad.png" alt="NO视频">
-        <a class="webname" href="https://www.novipnoad.net/" target="_blank" rel="noopener noreferrer">NO视频</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/kanpiankuangren.png" alt="看片狂人">
-        <a class="webname" href="https://kpkuang.one/" target="_blank" rel="noopener noreferrer">看片狂人</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/yjys.png" alt="缘觉影视">
-        <a class="webname" href="https://www.yjys.me/" target="_blank" rel="noopener noreferrer">缘觉影视</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/diduan.png" alt="低端影视">
-        <a class="webname" href="https://ddys.pro/" target="_blank" rel="noopener noreferrer">低端影视</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/meijuxingqiu.png" alt="美剧星球">
-        <a class="webname" href="https://www.kmeiju.cc/" target="_blank" rel="noopener noreferrer">美剧星球</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/ppyingshi.png" alt="PP影视">
-        <a class="webname" href="https://www.pptv06.com/" target="_blank" rel="noopener noreferrer">PP影视</a>
-      </div>
-      <!-- 分界线 -->
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/goufan.png" alt="狗番">
-        <a class="webname" href="https://www.dogsfun.fun/" target="_blank" rel="noopener noreferrer">狗番</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/mansousou.png" alt="漫搜搜">
-        <a class="webname" href="https://msousou.vip/" target="_blank" rel="noopener noreferrer">漫搜搜</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/mitang.png" alt="蜜糖动漫">
-        <a class="webname" href="https://www.mtacg.tv/" target="_blank" rel="noopener noreferrer">蜜糖动漫</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/miaowuciyuan.png" alt="喵物次元">
-        <a class="webname" href="https://www.mwcy.net/" target="_blank" rel="noopener noreferrer">喵物次元</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/nicodongman.png" alt="Nico动漫">
-        <a class="webname" href="https://nicohub.cc/" target="_blank" rel="noopener noreferrer">Nico动漫</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/video/202405/hehedongman.png" alt="呵呵动漫">
-        <a class="webname" href="https://www.hehe.la/" target="_blank" rel="noopener noreferrer">呵呵动漫</a>
-      </div>
-    </section>
-    <h2>友情链接</h2>
-    <section>
-      <div class="webcard">
-        <img class="weblogo" src="img/search.svg" alt="主页">
-        <a class="webname" href="https://s.videolist.cn/" target="_blank">极点AI搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="主页">
-        <a class="webname" href="https://home.videolist.cn/" target="_blank">极点搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="主页">
-        <a class="webname" href="https://home.videolist.cn/" target="_blank">极点搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="主页">
-        <a class="webname" href="https://home.videolist.cn/" target="_blank">极点搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="主页">
-        <a class="webname" href="https://home.videolist.cn/" target="_blank">极点搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="主页">
-        <a class="webname" href="https://home.videolist.cn/" target="_blank">极点搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="主页">
-        <a class="webname" href="https://home.videolist.cn/" target="_blank">极点搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="主页">
-        <a class="webname" href="https://home.videolist.cn/" target="_blank">极点搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="主页">
-        <a class="webname" href="https://home.videolist.cn/" target="_blank">极点搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="主页">
-        <a class="webname" href="https://home.videolist.cn/" target="_blank">极点搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="主页">
-        <a class="webname" href="https://home.videolist.cn/" target="_blank">极点搜索</a>
-      </div>
-      <div class="webcard">
-        <img class="weblogo" src="img/logo.svg" alt="主页">
-        <a class="webname" href="https://home.videolist.cn/" target="_blank">极点搜索</a>
-      </div>
-    </section>
-
-  </main>
-  <footer>
-    <div>Copyright ©️2024 Extreme Dimension All Rights Reserved</div>
-    <div>version 1.0.6</div>
-  </footer>
-</body>
-<script src="js/index.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TE49TDZ90Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-TE49TDZ90Z');
-</script>
-
 </html>
