@@ -18,23 +18,34 @@
     <script>
       function loadFavicons() {
         const logos = document.querySelectorAll(".toollogo img");
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              const url = img.getAttribute("data-src");
+              if (url) {
+                const domain = new URL(url).hostname;
+                img.src = `https://api.iowen.cn/favicon/${domain}.png`;
+                img.onerror = function () {
+                  this.src = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+                  this.onerror = function () {
+                    this.src = "img/logo.svg"; // 添加一个默认的占位图
+                  };
+                };
+                observer.unobserve(img);
+              }
+            }
+          });
+        });
+
         logos.forEach((logo) => {
-          const url = logo.getAttribute("src");
-          if (url) {
-            const domain = new URL(url).hostname;
-            logo.src = `https://api.iowen.cn/favicon/${domain}.png`;
-            logo.onerror = function () {
-              // 如果主要服务失败，使用 Google 的服务作为备用
-              this.src = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
-            };
-          }
+          logo.src = "../img/placeholder.png"; // 添加一个加载中的占位图
+          observer.observe(logo);
         });
       }
 
       // 在页面加载完成后执行加载favicon
-      window.addEventListener("load", () => {
-        loadFavicons();
-      });
+      window.addEventListener("load", loadFavicons);
     </script>
   </head>
 
@@ -113,10 +124,7 @@
           <a href="https://chat.openai.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/chat.openai.com.png"
-                  alt="ChatGPT"
-                />
+                <img data-src="https://chat.openai.com/" alt="ChatGPT" />
               </div>
               <div class="toolname">
                 <p class="name1">ChatGPT</p>
@@ -127,10 +135,7 @@
           <a href="https://www.midjourney.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.midjourney.com.png"
-                  alt="Midjourney"
-                />
+                <img data-src="https://www.midjourney.com/" alt="Midjourney" />
               </div>
               <div class="toolname">
                 <p class="name1">Midjourney</p>
@@ -141,10 +146,7 @@
           <a href="https://www.notion.so/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.notion.so.png"
-                  alt="Notion"
-                />
+                <img data-src="https://www.notion.so/" alt="Notion" />
               </div>
               <div class="toolname">
                 <p class="name1">Notion</p>
@@ -155,10 +157,7 @@
           <a href="https://github.com/features/copilot" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/github.com.png"
-                  alt="GitHub Copilot"
-                />
+                <img data-src="https://github.com/" alt="GitHub Copilot" />
               </div>
               <div class="toolname">
                 <p class="name1">GitHub Copilot</p>
@@ -169,10 +168,7 @@
           <a href="https://www.grammarly.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.grammarly.com.png"
-                  alt="Grammarly"
-                />
+                <img data-src="https://www.grammarly.com/" alt="Grammarly" />
               </div>
               <div class="toolname">
                 <p class="name1">Grammarly</p>
@@ -186,10 +182,7 @@
           <a href="https://chat.openai.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/chat.openai.com.png"
-                  alt="ChatGPT"
-                />
+                <img data-src="https://chat.openai.com/" alt="ChatGPT" />
               </div>
               <div class="toolname">
                 <p class="name1">ChatGPT</p>
@@ -200,10 +193,7 @@
           <a href="https://www.anthropic.com/claude" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.anthropic.com.png"
-                  alt="Claude"
-                />
+                <img data-src="https://www.anthropic.com/" alt="Claude" />
               </div>
               <div class="toolname">
                 <p class="name1">Claude</p>
@@ -214,10 +204,7 @@
           <a href="https://wenxin.baidu.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/wenxin.baidu.com.png"
-                  alt="文心一言"
-                />
+                <img data-src="https://wenxin.baidu.com/" alt="文心一言" />
               </div>
               <div class="toolname">
                 <p class="name1">文心一言</p>
@@ -228,10 +215,7 @@
           <a href="https://tongyi.aliyun.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/tongyi.aliyun.com.png"
-                  alt="通义千问"
-                />
+                <img data-src="https://tongyi.aliyun.com/" alt="通义千问" />
               </div>
               <div class="toolname">
                 <p class="name1">通义千问</p>
@@ -242,10 +226,7 @@
           <a href="https://gemini.google.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/gemini.google.com.png"
-                  alt="Gemini"
-                />
+                <img data-src="https://gemini.google.com/" alt="Gemini" />
               </div>
               <div class="toolname">
                 <p class="name1">Gemini</p>
@@ -256,10 +237,7 @@
           <a href="https://xinghuo.xfyun.cn/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/xinghuo.xfyun.cn.png"
-                  alt="讯飞星火"
-                />
+                <img data-src="https://xinghuo.xfyun.cn/" alt="讯飞星火" />
               </div>
               <div class="toolname">
                 <p class="name1">讯飞星火</p>
@@ -270,10 +248,7 @@
           <a href="https://chatglm.cn/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/chatglm.cn.png"
-                  alt="智谱清言"
-                />
+                <img data-src="https://chatglm.cn/" alt="智谱清言" />
               </div>
               <div class="toolname">
                 <p class="name1">智谱清言</p>
@@ -284,10 +259,7 @@
           <a href="https://www.minimaxi.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.minimaxi.com.png"
-                  alt="MiniMax"
-                />
+                <img data-src="https://www.minimaxi.com/" alt="MiniMax" />
               </div>
               <div class="toolname">
                 <p class="name1">MiniMax</p>
@@ -298,10 +270,7 @@
           <a href="https://www.anthropic.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.anthropic.com.png"
-                  alt="Claude 2"
-                />
+                <img data-src="https://www.anthropic.com/" alt="Claude 2" />
               </div>
               <div class="toolname">
                 <p class="name1">Claude 2</p>
@@ -312,10 +281,7 @@
           <a href="https://www.cohere.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.cohere.ai.png"
-                  alt="Cohere"
-                />
+                <img data-src="https://www.cohere.ai/" alt="Cohere" />
               </div>
               <div class="toolname">
                 <p class="name1">Cohere</p>
@@ -329,10 +295,7 @@
           <a href="https://www.promptboom.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.promptboom.com.png"
-                  alt="PromptBoom"
-                />
+                <img data-src="https://www.promptboom.com/" alt="PromptBoom" />
               </div>
               <div class="toolname">
                 <p class="name1">PromptBoom</p>
@@ -343,10 +306,7 @@
           <a href="https://www.mojidoc.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.mojidoc.com.png"
-                  alt="魔咒百科"
-                />
+                <img data-src="https://www.mojidoc.com/" alt="魔咒百科" />
               </div>
               <div class="toolname">
                 <p class="name1">魔咒百科</p>
@@ -357,10 +317,7 @@
           <a href="https://flowgpt.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/flowgpt.com.png"
-                  alt="FlowGPT"
-                />
+                <img data-src="https://flowgpt.com/" alt="FlowGPT" />
               </div>
               <div class="toolname">
                 <p class="name1">FlowGPT</p>
@@ -372,7 +329,7 @@
             <div class="toolcard">
               <div class="toollogo">
                 <img
-                  src="https://api.iowen.cn/favicon/promptperfect.jina.ai.png"
+                  data-src="https://promptperfect.jina.ai/"
                   alt="PromptPerfect"
                 />
               </div>
@@ -385,10 +342,7 @@
           <a href="https://www.promptbase.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.promptbase.com.png"
-                  alt="PromptBase"
-                />
+                <img data-src="https://www.promptbase.com/" alt="PromptBase" />
               </div>
               <div class="toolname">
                 <p class="name1">PromptBase</p>
@@ -399,10 +353,7 @@
           <a href="https://www.aiprm.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.aiprm.com.png"
-                  alt="AIPRM"
-                />
+                <img data-src="https://www.aiprm.com/" alt="AIPRM" />
               </div>
               <div class="toolname">
                 <p class="name1">AIPRM</p>
@@ -413,10 +364,7 @@
           <a href="https://prompthero.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/prompthero.com.png"
-                  alt="PromptHero"
-                />
+                <img data-src="https://prompthero.com/" alt="PromptHero" />
               </div>
               <div class="toolname">
                 <p class="name1">PromptHero</p>
@@ -428,7 +376,7 @@
             <div class="toolcard">
               <div class="toollogo">
                 <img
-                  src="https://api.iowen.cn/favicon/www.promptstacks.com.png"
+                  data-src="https://www.promptstacks.com/"
                   alt="PromptStacks"
                 />
               </div>
@@ -444,10 +392,7 @@
           <a href="https://www.grammarly.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.grammarly.com.png"
-                  alt="Grammarly"
-                />
+                <img data-src="https://www.grammarly.com/" alt="Grammarly" />
               </div>
               <div class="toolname">
                 <p class="name1">Grammarly</p>
@@ -458,10 +403,7 @@
           <a href="https://www.jasper.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.jasper.ai.png"
-                  alt="Jasper"
-                />
+                <img data-src="https://www.jasper.ai/" alt="Jasper" />
               </div>
               <div class="toolname">
                 <p class="name1">Jasper</p>
@@ -472,10 +414,7 @@
           <a href="https://www.notion.so/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.notion.so.png"
-                  alt="Notion"
-                />
+                <img data-src="https://www.notion.so/" alt="Notion" />
               </div>
               <div class="toolname">
                 <p class="name1">Notion</p>
@@ -486,10 +425,7 @@
           <a href="https://www.copy.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.copy.ai.png"
-                  alt="Copy.ai"
-                />
+                <img data-src="https://www.copy.ai/" alt="Copy.ai" />
               </div>
               <div class="toolname">
                 <p class="name1">Copy.ai</p>
@@ -500,10 +436,7 @@
           <a href="https://quillbot.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/quillbot.com.png"
-                  alt="QuillBot"
-                />
+                <img data-src="https://quillbot.com/" alt="QuillBot" />
               </div>
               <div class="toolname">
                 <p class="name1">QuillBot</p>
@@ -514,10 +447,7 @@
           <a href="https://www.wordtune.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.wordtune.com.png"
-                  alt="Wordtune"
-                />
+                <img data-src="https://www.wordtune.com/" alt="Wordtune" />
               </div>
               <div class="toolname">
                 <p class="name1">Wordtune</p>
@@ -528,10 +458,7 @@
           <a href="https://www.writesonic.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.writesonic.com.png"
-                  alt="Writesonic"
-                />
+                <img data-src="https://www.writesonic.com/" alt="Writesonic" />
               </div>
               <div class="toolname">
                 <p class="name1">Writesonic</p>
@@ -542,10 +469,7 @@
           <a href="https://www.sudowrite.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.sudowrite.com.png"
-                  alt="Sudowrite"
-                />
+                <img data-src="https://www.sudowrite.com/" alt="Sudowrite" />
               </div>
               <div class="toolname">
                 <p class="name1">Sudowrite</p>
@@ -559,10 +483,7 @@
           <a href="https://www.midjourney.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.midjourney.com.png"
-                  alt="Midjourney"
-                />
+                <img data-src="https://www.midjourney.com/" alt="Midjourney" />
               </div>
               <div class="toolname">
                 <p class="name1">Midjourney</p>
@@ -573,10 +494,7 @@
           <a href="https://stability.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/stability.ai.png"
-                  alt="Stable Diffusion"
-                />
+                <img data-src="https://stability.ai/" alt="Stable Diffusion" />
               </div>
               <div class="toolname">
                 <p class="name1">Stable Diffusion</p>
@@ -587,10 +505,7 @@
           <a href="https://www.canva.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.canva.com.png"
-                  alt="Canva"
-                />
+                <img data-src="https://www.canva.com/" alt="Canva" />
               </div>
               <div class="toolname">
                 <p class="name1">Canva</p>
@@ -605,7 +520,7 @@
             <div class="toolcard">
               <div class="toollogo">
                 <img
-                  src="https://api.iowen.cn/favicon/www.adobe.com.png"
+                  data-src="https://www.adobe.com/products/photoshop.html"
                   alt="Adobe Photoshop"
                 />
               </div>
@@ -618,10 +533,7 @@
           <a href="https://www.figma.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.figma.com.png"
-                  alt="Figma"
-                />
+                <img data-src="https://www.figma.com/" alt="Figma" />
               </div>
               <div class="toolname">
                 <p class="name1">Figma</p>
@@ -632,10 +544,7 @@
           <a href="https://www.dall-e.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.dall-e.com.png"
-                  alt="DALL-E"
-                />
+                <img data-src="https://www.dall-e.com/" alt="DALL-E" />
               </div>
               <div class="toolname">
                 <p class="name1">DALL-E</p>
@@ -646,10 +555,7 @@
           <a href="https://www.remove.bg/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.remove.bg.png"
-                  alt="remove.bg"
-                />
+                <img data-src="https://www.remove.bg/" alt="remove.bg" />
               </div>
               <div class="toolname">
                 <p class="name1">remove.bg</p>
@@ -660,10 +566,7 @@
           <a href="https://www.fotor.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.fotor.com.png"
-                  alt="Fotor"
-                />
+                <img data-src="https://www.fotor.com/" alt="Fotor" />
               </div>
               <div class="toolname">
                 <p class="name1">Fotor</p>
@@ -677,10 +580,7 @@
           <a href="https://github.com/features/copilot" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/github.com.png"
-                  alt="GitHub Copilot"
-                />
+                <img data-src="https://github.com/" alt="GitHub Copilot" />
               </div>
               <div class="toolname">
                 <p class="name1">GitHub Copilot</p>
@@ -692,7 +592,7 @@
             <div class="toolcard">
               <div class="toollogo">
                 <img
-                  src="https://api.iowen.cn/favicon/www.jetbrains.com.png"
+                  data-src="https://www.jetbrains.com/"
                   alt="JetBrains IDEs"
                 />
               </div>
@@ -706,7 +606,7 @@
             <div class="toolcard">
               <div class="toollogo">
                 <img
-                  src="https://api.iowen.cn/favicon/code.visualstudio.com.png"
+                  data-src="https://code.visualstudio.com/"
                   alt="Visual Studio Code"
                 />
               </div>
@@ -719,10 +619,7 @@
           <a href="https://www.tabnine.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.tabnine.com.png"
-                  alt="Tabnine"
-                />
+                <img data-src="https://www.tabnine.com/" alt="Tabnine" />
               </div>
               <div class="toolname">
                 <p class="name1">Tabnine</p>
@@ -733,10 +630,7 @@
           <a href="https://www.codium.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.codium.ai.png"
-                  alt="Codium"
-                />
+                <img data-src="https://www.codium.ai/" alt="Codium" />
               </div>
               <div class="toolname">
                 <p class="name1">Codium</p>
@@ -747,10 +641,7 @@
           <a href="https://www.replit.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.replit.com.png"
-                  alt="Replit"
-                />
+                <img data-src="https://www.replit.com/" alt="Replit" />
               </div>
               <div class="toolname">
                 <p class="name1">Replit</p>
@@ -761,10 +652,7 @@
           <a href="https://www.kite.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.kite.com.png"
-                  alt="Kite"
-                />
+                <img data-src="https://www.kite.com/" alt="Kite" />
               </div>
               <div class="toolname">
                 <p class="name1">Kite</p>
@@ -776,7 +664,7 @@
             <div class="toolcard">
               <div class="toollogo">
                 <img
-                  src="https://api.iowen.cn/favicon/www.sourcegraph.com.png"
+                  data-src="https://www.sourcegraph.com/"
                   alt="Sourcegraph"
                 />
               </div>
@@ -789,10 +677,7 @@
           <a href="https://www.codeium.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.codeium.com.png"
-                  alt="Codeium"
-                />
+                <img data-src="https://www.codeium.com/" alt="Codeium" />
               </div>
               <div class="toolname">
                 <p class="name1">Codeium</p>
@@ -803,10 +688,7 @@
           <a href="https://www.blackbox.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.blackbox.ai.png"
-                  alt="Blackbox AI"
-                />
+                <img data-src="https://www.blackbox.ai/" alt="Blackbox AI" />
               </div>
               <div class="toolname">
                 <p class="name1">Blackbox AI</p>
@@ -817,10 +699,7 @@
           <a href="https://www.deepcode.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.deepcode.ai.png"
-                  alt="DeepCode"
-                />
+                <img data-src="https://www.deepcode.ai/" alt="DeepCode" />
               </div>
               <div class="toolname">
                 <p class="name1">DeepCode</p>
@@ -831,10 +710,7 @@
           <a href="https://www.aixcoder.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.aixcoder.com.png"
-                  alt="AIXcoder"
-                />
+                <img data-src="https://www.aixcoder.com/" alt="AIXcoder" />
               </div>
               <div class="toolname">
                 <p class="name1">AIXcoder</p>
@@ -848,10 +724,7 @@
           <a href="https://runwayml.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/runwayml.com.png"
-                  alt="Runway"
-                />
+                <img data-src="https://runwayml.com/" alt="Runway" />
               </div>
               <div class="toolname">
                 <p class="name1">Runway</p>
@@ -862,10 +735,7 @@
           <a href="https://www.synthesia.io/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.synthesia.io.png"
-                  alt="Synthesia"
-                />
+                <img data-src="https://www.synthesia.io/" alt="Synthesia" />
               </div>
               <div class="toolname">
                 <p class="name1">Synthesia</p>
@@ -876,10 +746,7 @@
           <a href="https://www.descript.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.descript.com.png"
-                  alt="Descript"
-                />
+                <img data-src="https://www.descript.com/" alt="Descript" />
               </div>
               <div class="toolname">
                 <p class="name1">Descript</p>
@@ -890,10 +757,7 @@
           <a href="https://www.kapwing.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.kapwing.com.png"
-                  alt="Kapwing"
-                />
+                <img data-src="https://www.kapwing.com/" alt="Kapwing" />
               </div>
               <div class="toolname">
                 <p class="name1">Kapwing</p>
@@ -904,10 +768,7 @@
           <a href="https://www.fliki.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.fliki.ai.png"
-                  alt="Fliki"
-                />
+                <img data-src="https://www.fliki.ai/" alt="Fliki" />
               </div>
               <div class="toolname">
                 <p class="name1">Fliki</p>
@@ -918,10 +779,7 @@
           <a href="https://www.invideo.io/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.invideo.io.png"
-                  alt="InVideo"
-                />
+                <img data-src="https://www.invideo.io/" alt="InVideo" />
               </div>
               <div class="toolname">
                 <p class="name1">InVideo</p>
@@ -932,10 +790,7 @@
           <a href="https://www.lumen5.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.lumen5.com.png"
-                  alt="Lumen5"
-                />
+                <img data-src="https://www.lumen5.com/" alt="Lumen5" />
               </div>
               <div class="toolname">
                 <p class="name1">Lumen5</p>
@@ -946,10 +801,7 @@
           <a href="https://www.pictory.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.pictory.ai.png"
-                  alt="Pictory"
-                />
+                <img data-src="https://www.pictory.ai/" alt="Pictory" />
               </div>
               <div class="toolname">
                 <p class="name1">Pictory</p>
@@ -963,10 +815,7 @@
           <a href="https://www.descript.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.descript.com.png"
-                  alt="Descript"
-                />
+                <img data-src="https://www.descript.com/" alt="Descript" />
               </div>
               <div class="toolname">
                 <p class="name1">Descript</p>
@@ -977,10 +826,7 @@
           <a href="https://www.audacityteam.org/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.audacityteam.org.png"
-                  alt="Audacity"
-                />
+                <img data-src="https://www.audacityteam.org/" alt="Audacity" />
               </div>
               <div class="toolname">
                 <p class="name1">Audacity</p>
@@ -994,10 +840,7 @@
           >
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.adobe.com.png"
-                  alt="Adobe Audition"
-                />
+                <img data-src="https://www.adobe.com/" alt="Adobe Audition" />
               </div>
               <div class="toolname">
                 <p class="name1">Adobe Audition</p>
@@ -1008,10 +851,7 @@
           <a href="https://www.izotope.com/en/products/rx.html" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.izotope.com.png"
-                  alt="iZotope RX"
-                />
+                <img data-src="https://www.izotope.com/" alt="iZotope RX" />
               </div>
               <div class="toolname">
                 <p class="name1">iZotope RX</p>
@@ -1022,10 +862,7 @@
           <a href="https://www.aiva.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.aiva.ai.png"
-                  alt="AIVA"
-                />
+                <img data-src="https://www.aiva.ai/" alt="AIVA" />
               </div>
               <div class="toolname">
                 <p class="name1">AIVA</p>
@@ -1036,10 +873,7 @@
           <a href="https://www.ampermusic.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.ampermusic.com.png"
-                  alt="Amper Music"
-                />
+                <img data-src="https://www.ampermusic.com/" alt="Amper Music" />
               </div>
               <div class="toolname">
                 <p class="name1">Amper Music</p>
@@ -1050,10 +884,7 @@
           <a href="https://www.lalal.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.lalal.ai.png"
-                  alt="LALAL.AI"
-                />
+                <img data-src="https://www.lalal.ai/" alt="LALAL.AI" />
               </div>
               <div class="toolname">
                 <p class="name1">LALAL.AI</p>
@@ -1064,10 +895,7 @@
           <a href="https://www.suno.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.suno.ai.png"
-                  alt="Suno"
-                />
+                <img data-src="https://www.suno.ai/" alt="Suno" />
               </div>
               <div class="toolname">
                 <p class="name1">Suno</p>
@@ -1081,10 +909,7 @@
           <a href="https://www.replika.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.replika.com.png"
-                  alt="Replika"
-                />
+                <img data-src="https://www.replika.com/" alt="Replika" />
               </div>
               <div class="toolname">
                 <p class="name1">Replika</p>
@@ -1095,10 +920,7 @@
           <a href="https://www.aiart.limited/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.aiart.limited.png"
-                  alt="AI Art"
-                />
+                <img data-src="https://www.aiart.limited/" alt="AI Art" />
               </div>
               <div class="toolname">
                 <p class="name1">AI Art</p>
@@ -1109,10 +931,7 @@
           <a href="https://www.artbreeder.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.artbreeder.com.png"
-                  alt="Artbreeder"
-                />
+                <img data-src="https://www.artbreeder.com/" alt="Artbreeder" />
               </div>
               <div class="toolname">
                 <p class="name1">Artbreeder</p>
@@ -1123,10 +942,7 @@
           <a href="https://www.ai-writer.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.ai-writer.com.png"
-                  alt="AI Writer"
-                />
+                <img data-src="https://www.ai-writer.com/" alt="AI Writer" />
               </div>
               <div class="toolname">
                 <p class="name1">AI Writer</p>
@@ -1137,10 +953,7 @@
           <a href="https://www.lobe.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.lobe.ai.png"
-                  alt="Lobe"
-                />
+                <img data-src="https://www.lobe.ai/" alt="Lobe" />
               </div>
               <div class="toolname">
                 <p class="name1">Lobe</p>
@@ -1151,10 +964,7 @@
           <a href="https://www.remove.bg/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.remove.bg.png"
-                  alt="remove.bg"
-                />
+                <img data-src="https://www.remove.bg/" alt="remove.bg" />
               </div>
               <div class="toolname">
                 <p class="name1">remove.bg</p>
@@ -1165,10 +975,7 @@
           <a href="https://runwayml.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/runwayml.com.png"
-                  alt="Runway"
-                />
+                <img data-src="https://runwayml.com/" alt="Runway" />
               </div>
               <div class="toolname">
                 <p class="name1">Runway</p>
@@ -1179,10 +986,7 @@
           <a href="https://www.synthesia.io/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.synthesia.io.png"
-                  alt="Synthesia"
-                />
+                <img data-src="https://www.synthesia.io/" alt="Synthesia" />
               </div>
               <div class="toolname">
                 <p class="name1">Synthesia</p>
@@ -1193,10 +997,7 @@
           <a href="https://www.descript.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.descript.com.png"
-                  alt="Descript"
-                />
+                <img data-src="https://www.descript.com/" alt="Descript" />
               </div>
               <div class="toolname">
                 <p class="name1">Descript</p>
@@ -1207,10 +1008,7 @@
           <a href="https://www.aiva.ai/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.aiva.ai.png"
-                  alt="AIVA"
-                />
+                <img data-src="https://www.aiva.ai/" alt="AIVA" />
               </div>
               <div class="toolname">
                 <p class="name1">AIVA</p>
@@ -1224,10 +1022,7 @@
           <a href="https://openai.com/blog/openai-api" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/openai.com.png"
-                  alt="OpenAI API"
-                />
+                <img data-src="https://openai.com/" alt="OpenAI API" />
               </div>
               <div class="toolname">
                 <p class="name1">OpenAI API</p>
@@ -1238,10 +1033,7 @@
           <a href="https://cloud.google.com/vertex-ai" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/cloud.google.com.png"
-                  alt="Vertex AI"
-                />
+                <img data-src="https://cloud.google.com/" alt="Vertex AI" />
               </div>
               <div class="toolname">
                 <p class="name1">Vertex AI</p>
@@ -1253,7 +1045,7 @@
             <div class="toolcard">
               <div class="toollogo">
                 <img
-                  src="https://api.iowen.cn/favicon/www.huggingface.co.png"
+                  data-src="https://www.huggingface.co/"
                   alt="Hugging Face"
                 />
               </div>
@@ -1266,10 +1058,7 @@
           <a href="https://www.tensorflow.org/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.tensorflow.org.png"
-                  alt="TensorFlow"
-                />
+                <img data-src="https://www.tensorflow.org/" alt="TensorFlow" />
               </div>
               <div class="toolname">
                 <p class="name1">TensorFlow</p>
@@ -1280,10 +1069,7 @@
           <a href="https://ai.baidu.com/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/ai.baidu.com.png"
-                  alt="百度AI开放平台"
-                />
+                <img data-src="https://ai.baidu.com/" alt="百度AI开放平台" />
               </div>
               <div class="toolname">
                 <p class="name1">百度AI开放平台</p>
@@ -1295,7 +1081,7 @@
             <div class="toolcard">
               <div class="toollogo">
                 <img
-                  src="https://api.iowen.cn/favicon/www.aliyun.com.png"
+                  data-src="https://www.aliyun.com/product/ai"
                   alt="阿里云AI"
                 />
               </div>
@@ -1309,7 +1095,7 @@
             <div class="toolcard">
               <div class="toollogo">
                 <img
-                  src="https://api.iowen.cn/favicon/cloud.tencent.com.png"
+                  data-src="https://cloud.tencent.com/product/ai"
                   alt="腾讯云AI"
                 />
               </div>
@@ -1323,7 +1109,7 @@
             <div class="toolcard">
               <div class="toollogo">
                 <img
-                  src="https://api.iowen.cn/favicon/www.paddlepaddle.org.cn.png"
+                  data-src="https://www.paddlepaddle.org.cn/"
                   alt="飞桨PaddlePaddle"
                 />
               </div>
@@ -1336,10 +1122,7 @@
           <a href="https://www.mindspore.cn/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/www.mindspore.cn.png"
-                  alt="MindSpore"
-                />
+                <img data-src="https://www.mindspore.cn/" alt="MindSpore" />
               </div>
               <div class="toolname">
                 <p class="name1">MindSpore</p>
@@ -1350,10 +1133,7 @@
           <a href="https://megengine.org.cn/" target="_blank">
             <div class="toolcard">
               <div class="toollogo">
-                <img
-                  src="https://api.iowen.cn/favicon/megengine.org.cn.png"
-                  alt="MegEngine"
-                />
+                <img data-src="https://megengine.org.cn/" alt="MegEngine" />
               </div>
               <div class="toolname">
                 <p class="name1">MegEngine</p>
@@ -1365,8 +1145,8 @@
       </div>
     </main>
     <footer>
-      <div>Copyright ©️2024 Polar Dimension All Rights Reserved</div>
-      <div>version 1.0.9</div>
+      <div>Copyright ©️极点维度</div>
+      <div>version 1.1.0</div>
     </footer>
   </body>
   <script src="../js/tool.js"></script>
@@ -1384,42 +1164,3 @@
     gtag("config", "G-TE49TDZ90Z");
   </script>
 </html>
-
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</html>
-
-
-
-
-
-

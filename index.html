@@ -748,8 +748,8 @@
     </main>
 
     <footer>
-      <div>Copyright ©️2024 Polar Dimension All Rights Reserved</div>
-      <div>version 1.0.9</div>
+      <div>Copyright ©️极点维度</div>
+      <div>version 1.1.0</div>
     </footer>
 
     <!-- 主要JavaScript文件 -->
@@ -780,6 +780,9 @@
             logo.onerror = function () {
               // 如果主要服务失败，使用 Google 的服务作为备用
               this.src = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+              this.onerror = function () {
+                this.src = "img/logo.svg"; // 添加一个默认的占位图
+              };
             };
           }
         });
