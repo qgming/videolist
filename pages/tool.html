@@ -15,6 +15,27 @@
       name="description"
       content="橘子导航,免费导航,大模型,ai工具箱,chatgpt,kimi,deepseek,深度探索,华为盘古,文心一言,通义千问"
     />
+    <script>
+      function loadFavicons() {
+        const logos = document.querySelectorAll(".toollogo img");
+        logos.forEach((logo) => {
+          const url = logo.getAttribute("src");
+          if (url) {
+            const domain = new URL(url).hostname;
+            logo.src = `https://api.iowen.cn/favicon/${domain}.png`;
+            logo.onerror = function () {
+              // 如果主要服务失败，使用 Google 的服务作为备用
+              this.src = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+            };
+          }
+        });
+      }
+
+      // 在页面加载完成后执行加载favicon
+      window.addEventListener("load", () => {
+        loadFavicons();
+      });
+    </script>
   </head>
 
   <body>
@@ -94,7 +115,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/chat.openai.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="ChatGPT"
                 />
               </div>
@@ -109,7 +129,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.midjourney.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Midjourney"
                 />
               </div>
@@ -124,7 +143,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.notion.so.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Notion"
                 />
               </div>
@@ -139,7 +157,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/github.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="GitHub Copilot"
                 />
               </div>
@@ -154,7 +171,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.grammarly.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Grammarly"
                 />
               </div>
@@ -172,7 +188,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/chat.openai.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="ChatGPT"
                 />
               </div>
@@ -187,7 +202,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.anthropic.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Claude"
                 />
               </div>
@@ -202,7 +216,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/wenxin.baidu.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="文心一言"
                 />
               </div>
@@ -217,7 +230,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/tongyi.aliyun.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="通义千问"
                 />
               </div>
@@ -232,7 +244,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/gemini.google.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Gemini"
                 />
               </div>
@@ -247,7 +258,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/xinghuo.xfyun.cn.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="讯飞星火"
                 />
               </div>
@@ -262,7 +272,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/chatglm.cn.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="智谱清言"
                 />
               </div>
@@ -277,7 +286,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.minimaxi.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="MiniMax"
                 />
               </div>
@@ -292,7 +300,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.anthropic.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Claude 2"
                 />
               </div>
@@ -307,7 +314,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.cohere.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Cohere"
                 />
               </div>
@@ -325,7 +331,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.promptboom.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="PromptBoom"
                 />
               </div>
@@ -340,7 +345,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.mojidoc.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="魔咒百科"
                 />
               </div>
@@ -355,7 +359,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/flowgpt.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="FlowGPT"
                 />
               </div>
@@ -370,7 +373,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/promptperfect.jina.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="PromptPerfect"
                 />
               </div>
@@ -385,7 +387,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.promptbase.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="PromptBase"
                 />
               </div>
@@ -400,7 +401,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.aiprm.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="AIPRM"
                 />
               </div>
@@ -415,7 +415,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/prompthero.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="PromptHero"
                 />
               </div>
@@ -430,7 +429,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.promptstacks.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="PromptStacks"
                 />
               </div>
@@ -448,7 +446,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.grammarly.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Grammarly"
                 />
               </div>
@@ -463,7 +460,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.jasper.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Jasper"
                 />
               </div>
@@ -478,7 +474,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.notion.so.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Notion"
                 />
               </div>
@@ -493,7 +488,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.copy.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Copy.ai"
                 />
               </div>
@@ -508,7 +502,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/quillbot.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="QuillBot"
                 />
               </div>
@@ -523,7 +516,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.wordtune.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Wordtune"
                 />
               </div>
@@ -538,7 +530,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.writesonic.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Writesonic"
                 />
               </div>
@@ -553,7 +544,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.sudowrite.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Sudowrite"
                 />
               </div>
@@ -571,7 +561,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.midjourney.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Midjourney"
                 />
               </div>
@@ -586,7 +575,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/stability.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Stable Diffusion"
                 />
               </div>
@@ -601,7 +589,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.canva.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Canva"
                 />
               </div>
@@ -619,7 +606,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.adobe.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Adobe Photoshop"
                 />
               </div>
@@ -634,7 +620,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.figma.com.png"
-                  onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=www.figma.com';"
                   alt="Figma"
                 />
               </div>
@@ -649,7 +634,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.dall-e.com.png"
-                  onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=www.dall-e.com';"
                   alt="DALL-E"
                 />
               </div>
@@ -664,7 +648,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.remove.bg.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="remove.bg"
                 />
               </div>
@@ -679,7 +662,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.fotor.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Fotor"
                 />
               </div>
@@ -697,7 +679,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/github.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="GitHub Copilot"
                 />
               </div>
@@ -712,7 +693,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.jetbrains.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="JetBrains IDEs"
                 />
               </div>
@@ -727,7 +707,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/code.visualstudio.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Visual Studio Code"
                 />
               </div>
@@ -742,7 +721,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.tabnine.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Tabnine"
                 />
               </div>
@@ -757,7 +735,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.codium.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Codium"
                 />
               </div>
@@ -772,7 +749,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.replit.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Replit"
                 />
               </div>
@@ -787,7 +763,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.kite.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Kite"
                 />
               </div>
@@ -802,7 +777,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.sourcegraph.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Sourcegraph"
                 />
               </div>
@@ -817,7 +791,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.codeium.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Codeium"
                 />
               </div>
@@ -832,7 +805,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.blackbox.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Blackbox AI"
                 />
               </div>
@@ -847,7 +819,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.deepcode.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="DeepCode"
                 />
               </div>
@@ -862,7 +833,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.aixcoder.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="AIXcoder"
                 />
               </div>
@@ -880,7 +850,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/runwayml.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Runway"
                 />
               </div>
@@ -895,7 +864,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.synthesia.io.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Synthesia"
                 />
               </div>
@@ -910,7 +878,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.descript.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Descript"
                 />
               </div>
@@ -925,7 +892,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.kapwing.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Kapwing"
                 />
               </div>
@@ -940,7 +906,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.fliki.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Fliki"
                 />
               </div>
@@ -955,7 +920,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.invideo.io.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="InVideo"
                 />
               </div>
@@ -970,7 +934,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.lumen5.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Lumen5"
                 />
               </div>
@@ -985,7 +948,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.pictory.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Pictory"
                 />
               </div>
@@ -1003,7 +965,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.descript.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Descript"
                 />
               </div>
@@ -1018,7 +979,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.audacityteam.org.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Audacity"
                 />
               </div>
@@ -1036,7 +996,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.adobe.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Adobe Audition"
                 />
               </div>
@@ -1051,7 +1010,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.izotope.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="iZotope RX"
                 />
               </div>
@@ -1066,7 +1024,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.aiva.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="AIVA"
                 />
               </div>
@@ -1081,7 +1038,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.ampermusic.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Amper Music"
                 />
               </div>
@@ -1096,7 +1052,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.lalal.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="LALAL.AI"
                 />
               </div>
@@ -1111,7 +1066,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.suno.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Suno"
                 />
               </div>
@@ -1129,7 +1083,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.replika.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Replika"
                 />
               </div>
@@ -1144,7 +1097,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.aiart.limited.png"
-                  onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=www.aiart.limited';"
                   alt="AI Art"
                 />
               </div>
@@ -1159,7 +1111,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.artbreeder.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Artbreeder"
                 />
               </div>
@@ -1174,7 +1125,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.ai-writer.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="AI Writer"
                 />
               </div>
@@ -1189,7 +1139,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.lobe.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Lobe"
                 />
               </div>
@@ -1204,7 +1153,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.remove.bg.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="remove.bg"
                 />
               </div>
@@ -1219,7 +1167,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/runwayml.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Runway"
                 />
               </div>
@@ -1234,7 +1181,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.synthesia.io.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Synthesia"
                 />
               </div>
@@ -1249,7 +1195,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.descript.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Descript"
                 />
               </div>
@@ -1264,7 +1209,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.aiva.ai.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="AIVA"
                 />
               </div>
@@ -1282,7 +1226,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/openai.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="OpenAI API"
                 />
               </div>
@@ -1297,7 +1240,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/cloud.google.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Vertex AI"
                 />
               </div>
@@ -1312,7 +1254,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.huggingface.co.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="Hugging Face"
                 />
               </div>
@@ -1327,7 +1268,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.tensorflow.org.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="TensorFlow"
                 />
               </div>
@@ -1342,7 +1282,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/ai.baidu.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="百度AI开放平台"
                 />
               </div>
@@ -1357,7 +1296,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.aliyun.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="阿里云AI"
                 />
               </div>
@@ -1372,7 +1310,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/cloud.tencent.com.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="腾讯云AI"
                 />
               </div>
@@ -1387,7 +1324,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.paddlepaddle.org.cn.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="飞桨PaddlePaddle"
                 />
               </div>
@@ -1402,7 +1338,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/www.mindspore.cn.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="MindSpore"
                 />
               </div>
@@ -1417,7 +1352,6 @@
               <div class="toollogo">
                 <img
                   src="https://api.iowen.cn/favicon/megengine.org.cn.png"
-                  onerror="this.onerror=null;this.src='https://api.iowen.cn/favicon/default.png';"
                   alt="MegEngine"
                 />
               </div>
